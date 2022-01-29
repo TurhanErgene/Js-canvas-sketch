@@ -6,7 +6,17 @@ const settings = {
 
 const sketch = () => {
   return ({ context, width, height }) => {
-    context.fillStyle = 'white';
+    //colors
+    let isBlack = Math.random();
+    if (isBlack > 0.5) {
+      context.fillStyle = 'lightgray';
+      context.strokeStyle = "black";
+    } else {
+      context.fillStyle = 'black'; //lightgray
+      context.strokeStyle = "white";
+    }
+
+    //measurements
     context.fillRect(0, 0, width, height);
     context.lineWidth = width * 0.008;
       const w = width * 0.10;
@@ -18,7 +28,7 @@ const sketch = () => {
       const off = width * 0.02;
 
       let x, y;
-      
+
       for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 5; j++) {
           
@@ -28,7 +38,7 @@ const sketch = () => {
           context.beginPath();
           context.rect(x, y, w, h);
           context.stroke();
-          
+
           if(Math.random() > 0.5){
             context.beginPath();
             context.rect(x + (off / 2), y +  (off / 2), w - off, h - off);
