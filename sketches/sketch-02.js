@@ -36,6 +36,7 @@ const sketch = () => {
       context.save()
       context.translate(x, y);
       context.rotate(-angle)//*4
+      context.scale(2, 1)
       
       context.beginPath();
       context.rect(-w / 2, -h /2, w, h);
