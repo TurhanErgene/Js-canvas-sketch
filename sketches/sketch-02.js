@@ -3,7 +3,7 @@ const math = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 
 const settings = {
-  dimensions: [ 1080, 1080 ]
+  dimensions: [ 1080, 1080 ],
 };
 
 // const degToRad = (degrees) => {
@@ -46,9 +46,9 @@ const sketch = () => {
       context.scale(random.range(0.1, 2) , random.range(0.2, 2))//Math.random() * 3
 
       if (i%2 == 0) {
-        context.fillStyle = "purple"
+        context.fillStyle = "pink"
       } else {
-        context.fillStyle = "green"
+        context.fillStyle = "purple"
       }
       context.beginPath();
       context.rect(-w / 2, random.range(0, -h * 0.5), w, h);
