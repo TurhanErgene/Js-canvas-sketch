@@ -3,7 +3,7 @@ const math = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 
 const settings = {
-  dimensions: [ 1080, 1080 ],
+  dimensions: [ 1080, 1080 ]
 };
 
 // const degToRad = (degrees) => {
@@ -43,7 +43,7 @@ const sketch = () => {
       context.save()
       context.translate(x, y);
       context.rotate(-angle)//*4 //9
-      context.scale(random.range(0.1, 2) , random.range(0.2, 2))//Math.random() * 3
+      context.scale(random.range(0.1, 2) , random.range(0.2, 2.5))//Math.random() * 3
 
       if (i%2 == 0) {
         context.fillStyle = "pink"
