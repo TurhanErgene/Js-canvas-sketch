@@ -9,8 +9,8 @@ const sketch = () => {
     context.fillStyle = "white";
     context.fillRect(0, 0, width, height);
 
-    const cols = 4;
-    const rows = 3;
+    const cols = 30;
+    const rows = 30;
     const numCells = cols * rows;
 
     const gridw = width * 0.8;
@@ -33,6 +33,8 @@ const sketch = () => {
       context.translate(x, y);
       context.translate(margx, margy);
       context.translate(cellw * 0.5, cellh * 0.5)
+
+      context.lineWidth = 4;
 
       context.beginPath()
       context.moveTo(w * -0.5, 0)
