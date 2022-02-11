@@ -1,12 +1,12 @@
-const canvasSketch = require('canvas-sketch');
+const canvasSketch = require("canvas-sketch");
 
 const settings = {
-  dimensions: [ 1080, 1080 ]
+  dimensions: [1080, 1080],
 };
 
 const sketch = () => {
   return ({ context, width, height }) => {
-    context.fillStyle = 'white';
+    context.fillStyle = "white";
     context.fillRect(0, 0, width, height);
 
     const cols = 4;
@@ -22,9 +22,25 @@ const sketch = () => {
 
     for (let i = 0; i < numCells; i++) {
       const col = i % cols;
-      
-    }
+      const row = Math.floor(i / cols);
 
+      const x = col * cellw;
+      const y = row * cellh;
+      const w = cellw * 0.8;
+      const h = cellh * 0.8;
+
+      context.save();
+      context.translate(x, y);
+
+      context.beginPath()
+      context.moveTo(w * -0.5, 0)
+      context.lineTo(h * -0.5, 0)
+
+      context.stroke();
+
+      context.restore();
+
+    }
   };
 };
 
