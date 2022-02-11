@@ -31,10 +31,12 @@ const sketch = () => {
 
       context.save();
       context.translate(x, y);
+      context.translate(margx, margy);
+      context.translate(cellw * 0.5, cellh * 0.5)
 
       context.beginPath()
       context.moveTo(w * -0.5, 0)
-      context.lineTo(h * -0.5, 0)
+      context.lineTo(h * 0.5, 0)
 
       context.stroke();
 
