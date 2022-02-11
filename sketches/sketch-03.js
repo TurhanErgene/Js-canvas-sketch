@@ -14,11 +14,8 @@ const settings = {
 // animate();
 
 const sketch = ({ context, width, height }) => {
-
-  
-
   const agents = [];
-  
+
   for (let i = 0; i < 50; i++) {
     const x = random.range(0, width);
     const y = random.range(0, height);
@@ -27,11 +24,11 @@ const sketch = ({ context, width, height }) => {
   }
 
   return ({ context, width, height }) => {
-    context.fillStyle = "white";
+    context.fillStyle = "darkblue";
     context.fillRect(0, 0, width, height);
 
-    context.fillStyle = 'green';
-    context.strokeStyle = "lightgreen";
+    context.fillStyle = "white";
+    context.strokeStyle = "white";
 
     for (let i = 0; i < agents.length; i++) {
       const agent = agents[i];
@@ -56,8 +53,8 @@ const sketch = ({ context, width, height }) => {
       agent.update();
       agent.draw(context);
       agent.bounce(width, height);
+      //agent.wrap(width, height);
     });
-    
   };
 };
 
@@ -106,5 +103,9 @@ class Agent {
     context.fill();
     context.stroke();
     context.restore();
+  }
+  wrap(width, height) {
+    this.pos.x = (this.pos.x + width) % width;
+    this.pos.y = (this.pos.y + height) % height;
   }
 }
